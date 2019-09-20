@@ -20,11 +20,11 @@
         <li class="nav-item">
           <a class="nav-link" href="../index.html">Home</a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Advice Generator<span class="sr-only">(current)</span></a>
-        </li>
         <li class="nav-item">
-          <a class="nav-link" href="./love.html">Love Calculator</a>
+          <a class="nav-link" href="./advice.html">Advice Generator</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Love Calculator<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="./memes.html">Meme Generator</a>
@@ -33,25 +33,49 @@
     </div>
   </nav>
 
-  <div class="header" style="background-color:#e9ecef">
-    <h1 class="display-1">Advice Slip API</h1>
+  <div class="header" style="background-color:#dc3545;color:white">
+    <h1 class="display-1">Love Calculator</h1>
     <hr />
-    <button type="button" class="btn btn-info btn-lg" onclick="fetchAdvice()">Get Advice</button>
-    <h1 id="advice" class="display-4"></h1>
+    <form id="form" onsubmit="submit()">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" id="fname" placeholder="First Name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" id="sname" placeholder="Second Name">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-outline-light btn-lg">Calculate</button>
+    </form>
+    <h1 id="percent" class="display-2"></h1>
   </div>
 
   <script>
-    const fetchAdvice = async () => {
-      const response = await fetch('https://api.adviceslip.com/advice');
-      const json = await response.json();
-      var textToWrite;
-      if (json.slip) {
-        textToWrite = json.slip.advice;
+    document.getElementById("form").onsubmit = function(e) {submit(e)};
+    function submit(e) {
+      e.preventDefault();
+      var fname = document.getElementById("fname").value.toLowerCase();
+      var sname = document.getElementById("sname").value.toLowerCase();
+      var love = ['l','o','v','e'];
+      var count = 0;
+      for (i in fname) {
+        if (love.includes(fname[i])) {
+          count++
+        }
       }
-      else {
-        textToWrite = json.message.text;
+      for (i in sname) {
+        if (love.includes(sname[i])) {
+          count++
+        }
       }
-      document.getElementById("advice").innerText = textToWrite;
+      var percent = (count * 10)
+      for (i in fname) {
+        if (sname.includes(fname[i])) {
+          percent++;
+        }
+      }
+      console.log(percent);
+    	document.getElementById("percent").innerText = percent + "%";
     }
     function toggle() {
       var body = document.getElementById("body");

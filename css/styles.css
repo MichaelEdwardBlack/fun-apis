@@ -1,3 +1,38 @@
 body {
-    text-align: center;
+  padding-top: 144px;
 }
+
+.padded {
+  padding-top: 144px;
+}
+
+.padded-x {
+  padding-top: 312px;
+}
+
+.header {
+  padding: 150px;
+  text-align: center;
+  min-height: 100%
+}
+
+.header > button, form {
+  margin: 50px;
+}
+
+.header > form > button {
+  margin: 50px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+/* #b3d7ff light blue */
+/* #9e9e9e gray */
