@@ -34,5 +34,39 @@ body {
   margin-right: auto;
   width: 70%;
 }
-/* #b3d7ff light blue */
-/* #9e9e9e gray */
+
+footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .display-4 {
+    font-size: 4rem;
+  }
+  body {
+    font-size: 2rem;
+  }
+  .padded-x {
+    padding-top: 408px;
+  }
+  .lead {
+    font-size: 2rem;
+  }
+  button.btn {
+    font-size: 2rem;
+  }
+}

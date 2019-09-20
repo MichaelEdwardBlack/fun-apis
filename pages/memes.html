@@ -41,6 +41,27 @@
     <h1 id="error" style="color:red"></h1>
   </div>
 
+  <footer class="footer">
+    <div class="container">
+      <div class="text-muted">
+        This APIs used are the
+        <a href="https://api.adviceslip.com/">Advice Slip</a>
+        and the
+        <a href="https://api.imgflip.com/">ImgFlip</a>
+        APIs. The
+        <a href="https://rapidapi.com/ajith/api/love-calculator">Love Calculator</a>
+        API was not used as it no longer free.
+      </div>
+      <hr />
+      <div class="text-muted">
+        Website and Love Calculator Javascript Function created by Michael Black. See his work on Github
+        <a href="https://github.com/michaelblack117/fun-apis">
+          <i class="fa fa-github-alt" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
   <script>
     async function generateMeme() {
       var resp = await fetch("https://api.imgflip.com/get_memes");
